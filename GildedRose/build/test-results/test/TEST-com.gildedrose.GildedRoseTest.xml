@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-01T20:49:51" hostname="DESKTOP-J2E3K14" time="0.05">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-10-01T21:02:42" hostname="DESKTOP-J2E3K14" time="0.076">
   <properties/>
-  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.05"/>
+  <testcase name="Test that the name is unchanged" classname="com.gildedrose.GildedRoseTest" time="0.061"/>
+  <testcase name="testQualityDecreaseForNormalItem()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testQualityNeverNegative()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="testQualityDecreaseTwiceAfterSellIn()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testAgedBrieQualityIncrease()" classname="com.gildedrose.GildedRoseTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
