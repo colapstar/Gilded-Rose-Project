@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="gilded-rose-kata" target="17" />
+      <module name="gilded-rose-kata.main" target="17" />
+      <module name="gilded-rose-kata.test" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
