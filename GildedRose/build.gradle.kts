@@ -4,6 +4,7 @@ plugins {
     checkstyle
     pmd
     id("com.github.spotbugs") version "5.0.12"
+    id("info.solidsoft.pitest") version "1.7.0" // Added PITest plugin
 }
 
 repositories {
@@ -24,10 +25,10 @@ tasks.test {
 }
 
 tasks.withType<JavaCompile>() {
-  options.encoding = "UTF-8"
-  options.compilerArgs.add("-Xlint:all")
-  options.compilerArgs.add("-Xlint:-serial")
-  options.compilerArgs.add("--enable-preview")
+    options.encoding = "UTF-8"
+    options.compilerArgs.add("-Xlint:all")
+    options.compilerArgs.add("-Xlint:-serial")
+    options.compilerArgs.add("--enable-preview")
 }
 
 tasks.withType<Checkstyle>().configureEach {
@@ -53,4 +54,12 @@ pmd {
         "category/java/performance.xml",
         "category/java/security.xml",
     )
+}
+
+// Added PITest configuration
+pitest {
+    targetClasses = setOf("com.gildedrose.*")  // specify the classes or packages you want to mutate
+    threads = 4  // number of threads to use, adjust as per your machine
+    outputFormats = setOf("HTML", "XML")  // output formats
+    timestampedReports = false
 }
