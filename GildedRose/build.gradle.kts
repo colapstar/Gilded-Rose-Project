@@ -1,10 +1,11 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+
 plugins {
     `java-library`
     jacoco
     checkstyle
     pmd
-    id("com.github.spotbugs") version "5.0.12"
-    id("info.solidsoft.pitest") version "1.7.0" // Added PITest plugin
+    id("info.solidsoft.pitest") version "1.9.0"
 }
 
 repositories {
@@ -13,6 +14,8 @@ repositories {
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    testImplementation("org.pitest:pitest-junit5-plugin:1.2.0")
+
 }
 
 tasks.test {
@@ -20,6 +23,7 @@ tasks.test {
     jvmArgs("--enable-preview")
     testLogging {
         showStandardStreams = true
+        exceptionFormat = TestExceptionFormat.FULL // SHORT
         events("passed", "skipped", "failed")
     }
 }
@@ -42,24 +46,24 @@ tasks.withType<Checkstyle>().configureEach {
 pmd {
     isIgnoreFailures = true
     isConsoleOutput = true
-    toolVersion = "6.21.0"
+    toolVersion = "6.55.0"
     rulesMinimumPriority.set(5)
+    threads.set(4)
     ruleSets = listOf(
-        "category/java/bestpractices.xml",
-        "category/java/codestyle.xml",
-        "category/java/design.xml",
-        "category/java/documentation.xml",
-        "category/java/errorprone.xml",
-        "category/java/multithreading.xml",
-        "category/java/performance.xml",
-        "category/java/security.xml",
+            "category/java/bestpractices.xml",
+            "category/java/codestyle.xml",
+            "category/java/design.xml",
+            "category/java/documentation.xml",
+            "category/java/errorprone.xml",
+            "category/java/multithreading.xml",
+            "category/java/performance.xml",
+            "category/java/security.xml",
     )
 }
 
-// Added PITest configuration
 pitest {
-    targetClasses = setOf("com.gildedrose.*")  // specify the classes or packages you want to mutate
-    threads = 4  // number of threads to use, adjust as per your machine
-    outputFormats = setOf("HTML", "XML")  // output formats
-    timestampedReports = false
+    targetClasses.set(listOf("com.gildedrose.*"))
+    threads.set(4)
+    outputFormats.set(listOf("HTML", "XML"))
+    timestampedReports.set(false)
 }
