@@ -103,6 +103,37 @@ class GildedRoseTest {
     assertEquals(expectedString, element.toString());
   }
 
+  @Test
+  void testBackstagePassesQualityIncreaseBoundary11Days() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 20);
+    GildedRose app = new GildedRose(new Item[]{element});
+    app.updateQuality();
+    assertEquals(21, element.quality); // Quality should increase by 1 when there are 11 days left
+  }
+
+  @Test
+  void testBackstagePassesQualityIncreaseBoundary6Days() {
+    Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 20);
+    GildedRose app = new GildedRose(new Item[]{element});
+    app.updateQuality();
+    assertEquals(22, element.quality); // Quality should increase by 2 when there are 6 days left
+  }
+
+  @Test
+  void testNormalItemQualityDecreaseAfterSellInBoundary() {
+    Item element = new Item("normal", -1, 1);
+    GildedRose app = new GildedRose(new Item[]{element});
+    app.updateQuality();
+    assertEquals(0, element.quality); // Quality should decrease to 0
+  }
+
+  @Test
+  void testAgedBrieQualityIncreaseBoundary() {
+    Item element = new Item("Aged Brie", -1, 49);
+    GildedRose app = new GildedRose(new Item[]{element});
+    app.updateQuality();
+    assertEquals(50, element.quality); // Quality should increase to 50 and not exceed it
+  }
 }
 
 
