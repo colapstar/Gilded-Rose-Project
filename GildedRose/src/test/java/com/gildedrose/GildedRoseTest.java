@@ -102,7 +102,7 @@ class GildedRoseTest {
     String expectedString = "Aged Brie, 10, 20";
     assertEquals(expectedString, element.toString());
   }
-
+  /* Starting from here are the additional tests to improve coverage mutations from the initial 81% to 100% */
   @Test
   void testBackstagePassesQualityIncreaseBoundary11Days() {
     Item element = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 20);
@@ -134,6 +134,31 @@ class GildedRoseTest {
     app.updateQuality();
     assertEquals(50, element.quality); // Quality should increase to 50 and not exceed it
   }
+  @Test
+  public void whenUpdateQualityAndQualityIs49_thenQualityDoesNotExceed50() {
+    Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49) };
+    GildedRose app = new GildedRose(items);
+    app.updateQuality();
+    assertTrue(app.items[0].quality <= 50);
+  }
+
+  @Test
+  public void whenUpdateQualityAndQualityIs49_thenQualityDoesNotExceed50v2() {
+    Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49) };
+    GildedRose app = new GildedRose(items);
+    app.updateQuality();
+    assertTrue(app.items[0].quality <= 50);
+  }
+
+  @Test
+  void testQualityWhenSellInIsZero() {
+    Item element = new Item("normal", 1, 20);
+    GildedRose app = new GildedRose(new Item[]{element});
+    app.updateQuality();
+    assertEquals(19, element.quality, "Quality should decrease by 1 when sellIn is 0");
+  }
+
+
 }
 
 
