@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class GildedRoseTest {
 
   @Test
-  @DisplayName("Test that the name is unchanged")
   void testName() {
     Item element = new Item("foo", 0, 0);
     GildedRose app = new GildedRose(new Item[]{element});
@@ -102,6 +101,7 @@ class GildedRoseTest {
     String expectedString = "Aged Brie, 10, 20";
     assertEquals(expectedString, element.toString());
   }
+
   /* Starting from here are the additional tests to improve coverage mutations from the initial 81% to 100% */
   @Test
   void testBackstagePassesQualityIncreaseBoundary11Days() {
@@ -157,8 +157,6 @@ class GildedRoseTest {
     app.updateQuality();
     assertEquals(19, element.quality, "Quality should decrease by 1 when sellIn is 0");
   }
-
-
 }
 
 
