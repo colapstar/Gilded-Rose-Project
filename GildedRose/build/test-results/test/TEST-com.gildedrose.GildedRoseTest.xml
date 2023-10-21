@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gildedrose.GildedRoseTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2023-10-21T14:38:39" hostname="DESKTOP-J2E3K14" time="0.174">
+<testsuite name="com.gildedrose.GildedRoseTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2023-10-21T15:01:19" hostname="DESKTOP-J2E3K14" time="0.152">
   <properties/>
-  <testcase name="testSulfurasNeverChanges()" classname="com.gildedrose.GildedRoseTest" time="0.054"/>
-  <testcase name="testQualityNeverMoreThan50()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
-  <testcase name="testName()" classname="com.gildedrose.GildedRoseTest" time="0.006"/>
+  <testcase name="testSulfurasNeverChanges()" classname="com.gildedrose.GildedRoseTest" time="0.046"/>
+  <testcase name="testQualityNeverMoreThan50()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testName()" classname="com.gildedrose.GildedRoseTest" time="0.011"/>
   <testcase name="testQualityWhenSellInIsZero()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="whenUpdateQualityAndQualityIs49_thenQualityDoesNotExceed50()" classname="com.gildedrose.GildedRoseTest" time="0.005"/>
-  <testcase name="testBackstagePassesQualityDropsTo0AfterConcert()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="whenUpdateQualityAndQualityIs49_thenQualityDoesNotExceed50()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
+  <testcase name="testBackstagePassesQualityDropsTo0AfterConcert()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
   <testcase name="testAgedBrieQualityIncreaseBoundary()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="testItemToString()" classname="com.gildedrose.GildedRoseTest" time="0.014"/>
-  <testcase name="testQualityDecreaseForNormalItem()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
-  <testcase name="testNormalItemQualityDecreaseAfterSellInBoundary()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
-  <testcase name="testConjuredQualityDecreaseBeforeSellIn()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
-  <testcase name="testBackstagePassesQualityIncreaseBoundary6Days()" classname="com.gildedrose.GildedRoseTest" time="0.003"/>
-  <testcase name="testConjuredQualityDecreaseAfterSellIn()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
-  <testcase name="testAgedBrieQualityIncreaseAfterSellIn()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="testQualityNeverNegative()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testItemToString()" classname="com.gildedrose.GildedRoseTest" time="0.018"/>
+  <testcase name="testQualityDecreaseForNormalItem()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testNormalItemQualityDecreaseAfterSellInBoundary()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testConjuredQualityDecreaseBeforeSellIn()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testBackstagePassesQualityIncreaseBoundary6Days()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="testConjuredQualityDecreaseAfterSellIn()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="testAgedBrieQualityIncreaseAfterSellIn()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
+  <testcase name="testQualityNeverNegative()" classname="com.gildedrose.GildedRoseTest" time="0.006"/>
   <testcase name="testQualityDecreaseTwiceAfterSellIn()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
-  <testcase name="testBackstagePassesQualityIncreaseBoundary11Days()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="testBackstagePassesQualityIncreaseBy2()" classname="com.gildedrose.GildedRoseTest" time="0.0"/>
-  <testcase name="testBackstagePassesQualityIncreaseBy3()" classname="com.gildedrose.GildedRoseTest" time="0.001"/>
+  <testcase name="testBackstagePassesQualityIncreaseBoundary11Days()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
+  <testcase name="testBackstagePassesQualityIncreaseBy2()" classname="com.gildedrose.GildedRoseTest" time="0.009"/>
+  <testcase name="testBackstagePassesQualityIncreaseBy3()" classname="com.gildedrose.GildedRoseTest" time="0.004"/>
   <testcase name="testAgedBrieQualityIncrease()" classname="com.gildedrose.GildedRoseTest" time="0.002"/>
-  <testcase name="whenUpdateQualityAndQualityIs49_thenQualityDoesNotExceed50v2()" classname="com.gildedrose.GildedRoseTest" time="0.006"/>
+  <testcase name="whenUpdateQualityAndQualityIs49_thenQualityDoesNotExceed50v2()" classname="com.gildedrose.GildedRoseTest" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

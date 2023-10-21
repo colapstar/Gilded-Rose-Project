@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+// GildedRose inventory management system.
 class GildedRose {
   Item[] items;
 
@@ -7,6 +8,7 @@ class GildedRose {
     this.items = items;
   }
 
+  // Update quality and sell-in values for all items in the inventory.
   public void updateQuality() {
     for (Item item : items) {
       updateItemQuality(item);
@@ -14,6 +16,7 @@ class GildedRose {
     }
   }
 
+  // Adjust the quality of an item based on its type and sell-in value.
   private void updateItemQuality(Item item) {
     switch (item.name) {
       case "Aged Brie":
@@ -34,11 +37,11 @@ class GildedRose {
         }
         break;
       case "Sulfuras, Hand of Ragnaros":
-        break;  // Legendary item, no quality change
+        break;
       case "Conjured":
         decreaseQuality(item, 2);
         if (item.sellIn <= 0) {
-          decreaseQuality(item, 2);  // Decrease by an additional 2 after sellIn
+          decreaseQuality(item, 2);
         }
         break;
       default:
@@ -49,16 +52,19 @@ class GildedRose {
     }
   }
 
+  // Decrease the sell-in value for an item.
   private void updateItemSellIn(Item item) {
     if (!"Sulfuras, Hand of Ragnaros".equals(item.name)) {
       item.sellIn -= 1;
     }
   }
 
+  // Increase quality for certain items, but not beyond 50.
   private void increaseQuality(Item item, int amount) {
     item.quality = Math.min(50, item.quality + amount);
   }
 
+  // Decrease quality, but not below 0.
   private void decreaseQuality(Item item, int amount) {
     item.quality = Math.max(0, item.quality - amount);
   }

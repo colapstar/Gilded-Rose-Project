@@ -55,7 +55,7 @@
 </span>
 </span>
 </td>
-<td class=''><pre><span  class=''>public class Item {</span></pre></td></tr>
+<td class=''><pre><span  class=''>// Represents an item in the GildedRose inventory.</span></pre></td></tr>
 
 
 <tr>
@@ -70,7 +70,7 @@
 </span>
 </span>
 </td>
-<td class=''><pre><span  class=''></span></pre></td></tr>
+<td class=''><pre><span  class=''>public class Item {</span></pre></td></tr>
 
 
 <tr>
@@ -100,7 +100,7 @@
 </span>
 </span>
 </td>
-<td class=''><pre><span  class=''></span></pre></td></tr>
+<td class=''><pre><span  class=''>    public int sellIn;</span></pre></td></tr>
 
 
 <tr>
@@ -115,7 +115,7 @@
 </span>
 </span>
 </td>
-<td class=''><pre><span  class=''>    public int sellIn;</span></pre></td></tr>
+<td class=''><pre><span  class=''>    public int quality;</span></pre></td></tr>
 
 
 <tr>
@@ -134,7 +134,7 @@
 
 
 <tr>
-<td class='na'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@169bb4dd_9'/>
 9
 </td>
@@ -145,11 +145,11 @@
 </span>
 </span>
 </td>
-<td class=''><pre><span  class=''>    public int quality;</span></pre></td></tr>
+<td class='covered'><pre><span  class=''>    public Item(String name, int sellIn, int quality) {</span></pre></td></tr>
 
 
 <tr>
-<td class='na'>
+<td class='covered'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@169bb4dd_10'/>
 10
 </td>
@@ -160,7 +160,7 @@
 </span>
 </span>
 </td>
-<td class=''><pre><span  class=''></span></pre></td></tr>
+<td class='covered'><pre><span  class=''>        this.name = name;</span></pre></td></tr>
 
 
 <tr>
@@ -175,7 +175,7 @@
 </span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>    public Item(String name, int sellIn, int quality) {</span></pre></td></tr>
+<td class='covered'><pre><span  class=''>        this.sellIn = sellIn;</span></pre></td></tr>
 
 
 <tr>
@@ -190,7 +190,7 @@
 </span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>        this.name = name;</span></pre></td></tr>
+<td class='covered'><pre><span  class=''>        this.quality = quality;</span></pre></td></tr>
 
 
 <tr>
@@ -205,11 +205,11 @@
 </span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>        this.sellIn = sellIn;</span></pre></td></tr>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
 
 
 <tr>
-<td class='covered'>
+<td class='na'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@169bb4dd_14'/>
 14
 </td>
@@ -220,11 +220,11 @@
 </span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>        this.quality = quality;</span></pre></td></tr>
+<td class=''><pre><span  class=''></span></pre></td></tr>
 
 
 <tr>
-<td class='covered'>
+<td class='na'>
 <a name='org.pitest.mutationtest.report.html.SourceFile@169bb4dd_15'/>
 15
 </td>
@@ -235,7 +235,7 @@
 </span>
 </span>
 </td>
-<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+<td class=''><pre><span  class=''>    // Return item details as a string.</span></pre></td></tr>
 
 
 <tr>
@@ -250,7 +250,7 @@
 </span>
 </span>
 </td>
-<td class=''><pre><span  class=''></span></pre></td></tr>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
 
 
 <tr>
@@ -265,32 +265,17 @@
 </span>
 </span>
 </td>
-<td class=''><pre><span  class=''>   @Override</span></pre></td></tr>
-
-
-<tr>
-<td class='na'>
-<a name='org.pitest.mutationtest.report.html.SourceFile@169bb4dd_18'/>
-18
-</td>
-<td class=''>
-<span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@169bb4dd_18'></a>
-<span>
-</span>
-</span>
-</td>
-<td class=''><pre><span  class=''>   public String toString() {</span></pre></td></tr>
+<td class=''><pre><span  class=''>    public String toString() {</span></pre></td></tr>
 
 
 <tr>
 <td class='covered'>
-<a name='org.pitest.mutationtest.report.html.SourceFile@169bb4dd_19'/>
-19
+<a name='org.pitest.mutationtest.report.html.SourceFile@169bb4dd_18'/>
+18
 </td>
 <td class='killed'>
 <span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@169bb4dd_19'>1</a>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@169bb4dd_18'>1</a>
 <span>
 
 1. toString : replaced return value with &#34;&#34; for com/gildedrose/Item::toString &rarr; KILLED<br/>
@@ -299,6 +284,21 @@
 </span>
 </td>
 <td class='covered'><pre><span  class='killed'>        return this.name + &#34;, &#34; + this.sellIn + &#34;, &#34; + this.quality;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@169bb4dd_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@169bb4dd_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
 
 
 <tr>
@@ -313,21 +313,6 @@
 </span>
 </span>
 </td>
-<td class=''><pre><span  class=''>    }</span></pre></td></tr>
-
-
-<tr>
-<td class='na'>
-<a name='org.pitest.mutationtest.report.html.SourceFile@169bb4dd_21'/>
-21
-</td>
-<td class=''>
-<span class='pop'>
-<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@169bb4dd_21'></a>
-<span>
-</span>
-</span>
-</td>
 <td class=''><pre><span  class=''>}</span></pre></td></tr>
 
 
@@ -336,11 +321,11 @@
 
 
 <tr>
-<td><a href='#org.pitest.mutationtest.report.html.SourceFile@169bb4dd_19'>19</a></td> 
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@169bb4dd_18'>18</a></td> 
 <td></td>
 <td>
 
-<a name='grouporg.pitest.mutationtest.report.html.SourceFile@169bb4dd_19'/> 
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@169bb4dd_18'/> 
 
 <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>com.gildedrose.GildedRoseTest.[engine:junit-jupiter]/[class:com.gildedrose.GildedRoseTest]/[method:testItemToString()]</span></span> replaced return value with &#34;&#34; for com/gildedrose/Item::toString &rarr; KILLED</p> 
 </td>
@@ -378,7 +363,7 @@
 
 <h2>Tests examined</h2>
 <ul>
-<li>com.gildedrose.GildedRoseTest.[engine:junit-jupiter]/[class:com.gildedrose.GildedRoseTest]/[method:testItemToString()] (40 ms)</li>
+<li>com.gildedrose.GildedRoseTest.[engine:junit-jupiter]/[class:com.gildedrose.GildedRoseTest]/[method:testItemToString()] (11 ms)</li>
 </ul>
 
 <br/>
