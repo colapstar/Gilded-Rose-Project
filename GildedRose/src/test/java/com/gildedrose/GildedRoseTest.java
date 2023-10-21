@@ -134,9 +134,10 @@ class GildedRoseTest {
     app.updateQuality();
     assertEquals(50, element.quality); // Quality should increase to 50 and not exceed it
   }
+
   @Test
   public void whenUpdateQualityAndQualityIs49_thenQualityDoesNotExceed50() {
-    Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49) };
+    Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49)};
     GildedRose app = new GildedRose(items);
     app.updateQuality();
     assertTrue(app.items[0].quality <= 50); // Even if quality is at 49, updating quality should not exceed 50
@@ -144,7 +145,7 @@ class GildedRoseTest {
 
   @Test
   public void whenUpdateQualityAndQualityIs49_thenQualityDoesNotExceed50v2() {
-    Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49) };
+    Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49)};
     GildedRose app = new GildedRose(items);
     app.updateQuality();
     assertTrue(app.items[0].quality <= 50); // Even with 5 days left, updating quality from 49 should not exceed 50
@@ -157,7 +158,26 @@ class GildedRoseTest {
     app.updateQuality();
     assertEquals(19, element.quality); // Quality should decrease by 1 when there's 1 day left to sell
   }
+
+  /* Starting from here are the additional tests for the Conjured item */
+  @Test
+  void testConjuredQualityDecreaseBeforeSellIn() {
+    Item element = new Item("Conjured", 10, 20);
+    GildedRose app = new GildedRose(new Item[]{element});
+    app.updateQuality();
+    assertEquals(18, element.quality); //Quality should decrease by 2 before sellIn reaches 0
+    assertEquals(9, element.sellIn); //sellIn should decrease by 1
+  }
+
+  @Test
+  void testConjuredQualityDecreaseAfterSellIn() {
+    Item element = new Item("Conjured", 0, 20);
+    GildedRose app = new GildedRose(new Item[]{element});
+    app.updateQuality();
+    assertEquals(16, element.quality); //Quality should decrease by 4 after sellIn is 0 or less
+  }
 }
+
 
 
 

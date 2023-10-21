@@ -35,6 +35,12 @@ class GildedRose {
         break;
       case "Sulfuras, Hand of Ragnaros":
         break;  // Legendary item, no quality change
+      case "Conjured":
+        decreaseQuality(item, 2);
+        if (item.sellIn <= 0) {
+          decreaseQuality(item, 2);  // Decrease by an additional 2 after sellIn
+        }
+        break;
       default:
         decreaseQuality(item, 1);
         if (item.sellIn <= 0) {
